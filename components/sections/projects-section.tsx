@@ -2,7 +2,7 @@
 
 import { FocusFrame } from "@/components/camera-hud/focus-frame"
 import { HudText } from "@/components/camera-hud/hud-text"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ExternalLink, ChevronRight, Images } from "lucide-react"
 
 const images = [
@@ -78,6 +78,11 @@ const projects = [
 
 export function ProjectsSection() {
   const [activeProject, setActiveProject] = useState<string | null>(null)
+  const [photoPreview, setPhotoPreview] = useState(images[0])
+
+  useEffect(() => {
+    setPhotoPreview(images[Math.floor(Math.random() * images.length)])
+  }, [])
 
   return (
     <section id="projects" className="min-h-screen py-20 relative">
@@ -122,7 +127,7 @@ export function ProjectsSection() {
                 {/* Project Image */}
                 <div className="aspect-video bg-secondary relative overflow-hidden group">
                   <img
-                    src={project.id == "PHOTOS" ? images[Math.floor(Math.random() * images.length)] : project.image}
+                    src={project.id === "PHOTOS" ? photoPreview : project.image}
                     alt={`${project.title} preview`}
                     className="absolute inset-0 h-full w-full object-cover"
                   />

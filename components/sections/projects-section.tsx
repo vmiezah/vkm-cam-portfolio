@@ -2,7 +2,7 @@
 
 import { FocusFrame } from "@/components/camera-hud/focus-frame"
 import { HudText } from "@/components/camera-hud/hud-text"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ExternalLink, ChevronRight, Images } from "lucide-react"
 
 const images = [
@@ -42,7 +42,7 @@ const images = [
 "/myphotos/IMG_4881.jpeg",
 "/myphotos/IMG_4913.jpeg",
 "/myphotos/IMG_4914.jpeg",
-"/myphotos/IMG_5103.jpeg",
+"/myphotos/IMG_5103.JPG",
 "/myphotos/IMG_5248.jpeg",
 "/myphotos/IMG_5361.jpeg",
 "/myphotos/IMG_5402.jpeg",
@@ -80,9 +80,22 @@ export function ProjectsSection() {
   const [activeProject, setActiveProject] = useState<string | null>(null)
   const [photoPreview, setPhotoPreview] = useState(images[0])
 
-  useEffect(() => {
-    setPhotoPreview(images[Math.floor(Math.random() * images.length)])
-  }, [])
+  const getRandomImage = (current: string) => {
+    if (images.length <= 1) return current
+
+    let next = current
+    while (next === current) {
+      next = images[Math.floor(Math.random() * images.length)]
+    }
+    return next
+  }
+
+  const handleProjectMouseEnter = (projectId: string) => {
+    setActiveProject(projectId)
+    if (projectId === "PHOTOS") {
+      setPhotoPreview((current) => getRandomImage(current))
+    }
+  }
 
   return (
     <section id="projects" className="min-h-screen py-20 relative">
@@ -108,7 +121,7 @@ export function ProjectsSection() {
             >
               <div
                 className="flex flex-col gap-4"
-                onMouseEnter={() => setActiveProject(project.id)}
+                onMouseEnter={() => handleProjectMouseEnter(project.id)}
                 onMouseLeave={() => setActiveProject(null)}
               >
                 {/* Project Header */}

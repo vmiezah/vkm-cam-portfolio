@@ -27,7 +27,6 @@ export default function PortfolioPage() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3 font-mono text-xs text-muted-foreground">
-              <span className="w-2 h-2 rounded-full bg-hud-green" />
               <span>SYSTEM OPERATIONAL</span>
               <span className="text-border">|</span>
               <span>v1.0.0</span>

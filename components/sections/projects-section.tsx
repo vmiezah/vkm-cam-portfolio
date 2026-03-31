@@ -3,6 +3,7 @@
 import { FocusFrame } from "@/components/camera-hud/focus-frame"
 import { HudText } from "@/components/camera-hud/hud-text"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { ExternalLink, ChevronRight, Images } from "lucide-react"
 
 const images = [
@@ -77,6 +78,7 @@ const projects = [
 ]
 
 export function ProjectsSection() {
+  const router = useRouter()
   const [activeProject, setActiveProject] = useState<string | null>(null)
   const [photoPreview, setPhotoPreview] = useState(images[0])
 
@@ -94,6 +96,12 @@ export function ProjectsSection() {
     setActiveProject(projectId)
     if (projectId === "PHOTOS") {
       setPhotoPreview((current) => getRandomImage(current))
+    }
+  }
+
+  const handleProjectClick = (projectId: string) => {
+    if (projectId === "PHOTOS") {
+      router.push("/my-photos")
     }
   }
 
@@ -123,6 +131,7 @@ export function ProjectsSection() {
                 className="flex flex-col gap-4"
                 onMouseEnter={() => handleProjectMouseEnter(project.id)}
                 onMouseLeave={() => setActiveProject(null)}
+                onClick={() => handleProjectClick(project.id)}
               >
                 {/* Project Header */}
                 <div className="flex items-center justify-between">

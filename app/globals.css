@@ -173,6 +173,32 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
+.myphotos-stack-area {
+  position: relative;
+  height: 340vh;
+}
+
+.myphotos-stack-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.myphotos-card {
+  position: absolute;
+  width: min(72vw, 520px);
+  aspect-ratio: 3 / 4;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #000;
+  overflow: hidden;
+  transition: transform 0.55s ease-in-out;
+  transform-origin: bottom left;
+  will-change: transform;
+}
+
 .animate-focus-lock {
   animation: focus-lock 0.3s ease-out forwards;
 }

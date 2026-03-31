@@ -16,6 +16,8 @@ export function HudOverlay() {
   const currentTheme = (resolvedTheme || theme || "dark") as string
   const isDarkMode = currentTheme === "dark"
 
+  const [navScrolled, setNavScrolled] = useState(false)
+
   useEffect(() => {
     const updateTime = () => {
       const now = new Date()
@@ -38,6 +40,8 @@ export function HudOverlay() {
 
   useEffect(() => {
     const handleScroll = () => {
+      setNavScrolled(window.scrollY > 50)
+
       const sections = navItems.map(item => document.getElementById(item.id))
       const scrollPosition = window.scrollY + 200
 
@@ -89,7 +93,13 @@ export function HudOverlay() {
       </div>
 
       {/* Top Center - Exposure Settings */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 hidden md:flex items-center gap-4">
+      <div
+        className={`absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-4 transition-all duration-300 ${
+          navScrolled
+            ? "top-4 opacity-0 translate-y-2 pointer-events-none"
+            : "top-4 opacity-100 translate-y-0"
+        }`}
+      >
         <div className="bg-background/80 px-3 py-1.5 border border-border">
           <span className="text-hud-white">ISO</span>
           <span className="text-hud-yellow ml-2">400</span>

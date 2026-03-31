@@ -3,7 +3,7 @@
 import { FocusFrame } from "@/components/camera-hud/focus-frame"
 import { HudText } from "@/components/camera-hud/hud-text"
 import { useState } from "react"
-import { Send, Github, Linkedin, Mail } from "lucide-react"
+import { Send, Linkedin, Mail } from "lucide-react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -136,7 +136,6 @@ export function ContactSection() {
               <HudText variant="label" className="mb-4 block">External Links</HudText>
               <div className="flex gap-4">
                 {[
-                  { icon: Github, label: "GitHub", href: "#" },
                   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/vmiezah/", target:"_blank"},
                 ].map((social) => (
                   <a

@@ -7,7 +7,6 @@ import { Menu, X } from "lucide-react"
 export const navItems = [
   { id: "home", label: "HOME", shortcut: "01" },
   { id: "projects", label: "PROJECTS", shortcut: "02" },
-  { id: "skills", label: "SKILLS", shortcut: "03" },
   { id: "about", label: "ABOUT", shortcut: "04" },
   { id: "contact", label: "CONTACT", shortcut: "05" }
 ]

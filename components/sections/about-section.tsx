@@ -52,15 +52,7 @@ export function AboutSection() {
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 {/* Avatar Placeholder */}
                 <div className="w-32 h-32 bg-secondary border border-border relative shrink-0">
-                  <div className="absolute inset-2 border border-hud-green/50" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Camera className="w-8 h-8 text-muted-foreground" />
-                  </div>
-                  {/* Focus points */}
-                  <div className="absolute top-2 left-2 w-2 h-2 border border-hud-green" />
-                  <div className="absolute top-2 right-2 w-2 h-2 border border-hud-green" />
-                  <div className="absolute bottom-2 left-2 w-2 h-2 border border-hud-green" />
-                  <div className="absolute bottom-2 right-2 w-2 h-2 border border-hud-green" />
+                    <img src="/headshot2.jpg" alt="Victor's headshot" />
                 </div>
 
                 <div className="flex-1">

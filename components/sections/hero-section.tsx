@@ -30,7 +30,7 @@ export function HeroSection() {
                 <HudText variant="value">Engineer</HudText>
               </div>
               <div className="bg-secondary px-4 py-2 border border-border">
-                <HudText variant="value">Human</HudText>
+                <HudText variant="value">Creative</HudText>
               </div>
               <div className="bg-secondary px-4 py-2 border border-border">
                 <HudText variant="value">Learner</HudText>
@@ -39,9 +39,7 @@ export function HeroSection() {
 
             {/* Bio */}
             <p className="text-muted-foreground max-w-xl text-pretty leading-relaxed">
-              Crafting digital experiences through the lens of innovation. 
-              I transform complex problems into elegant, user-focused solutions 
-              with a focus on performance and accessibility.
+            I am technical enough to build it, creative enough to make it matter, and articulate enough to sell it. That combination is rare, and it is what I bring to every room I walk into.
             </p>
 
             {/* CTA */}

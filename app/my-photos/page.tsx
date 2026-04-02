@@ -106,7 +106,7 @@ export default function MyPhotosPage() {
         <div className="mb-8 flex items-center justify-between">
           <h1 className="font-mono text-sm tracking-[0.3em] text-hud-green">MY PHOTOS</h1>
           <Link
-            href="/"
+            href="/#projects"
             className="border border-white/20 px-3 py-2 font-mono text-xs text-white/80 transition-colors hover:border-white/40 hover:text-white"
           >
             BACK

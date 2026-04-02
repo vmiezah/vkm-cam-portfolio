@@ -62,7 +62,7 @@ const projects = [
     title: "PlotTwist",
     description: "A tool to encourage storytelling and creative expression for neurodivergent individuals.",
     tech: ["Figma"],
-    image: "/projects/ecommerce.jpg",
+    image: "/plottwist/affinity_map.png",
     status: "ITERATING",
     year: "2025"
   },
@@ -102,6 +102,9 @@ export function ProjectsSection() {
   const handleProjectClick = (projectId: string) => {
     if (projectId === "PHOTOS") {
       router.push("/my-photos")
+    }
+    if (projectId === "PLOTTWIST") {
+      router.push("/plottwist")
     }
   }
 

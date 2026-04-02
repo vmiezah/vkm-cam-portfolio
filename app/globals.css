@@ -192,6 +192,8 @@
   will-change: transform;
 }
 
+/**
+TODO: Add card flip animation on hover 
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;

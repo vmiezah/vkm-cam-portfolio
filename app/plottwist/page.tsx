@@ -3,37 +3,14 @@
 import { useEffect, useRef } from "react"
 import Link from "next/link"
 
-const plottwistPics = [
-  "/plottwist/affinity_map.png",
-  "/plottwist/designdraft1.png",
-  "/plottwist/designdraft2.png",
-  "/plottwist/plottwist-archetypes.jpg",
+const plottwistPics = [{id: 1, title: "Affinity Map", description: "A map of the characters and their relationships.", image: "/plottwist/affinity_map.png" },
+  { id: 2, title: "Design Draft 1", description: "A design draft of the characters and their relationships.", image: "/plottwist/designdraft1.png" },
+  { id: 3, title: "Design Draft 2", description: "A design draft of the characters and their relationships.", image: "/plottwist/designdraft2.png" },
+  { id: 4, title: "Plottwist Archetypes", description: "A design draft of the characters and their relationships.", image: "/plottwist/plottwist-archetypes.jpg" },
 ]
 
 export default function PlotTwistPage() {
   const stackRef = useRef<HTMLDivElement | null>(null)
-
-  // useEffect(() => {
-  //   const stack = stackRef.current
-  //   if (!stack) return
-
-  //   const cards = Array.from(stack.querySelectorAll<HTMLElement>(".myphotos-card"))
-  //   if (!cards.length) return
-
-  //   /** make card flip animation on hover and add text to background  */
-  //   const rotateCards = () => {
-  //     let angle = 0
-  //     cards.forEach((card, index) => {
-  //       if (card.classList.contains("away")) {
-  //         card.style.transform = "translateY(-120vh) rotate(-48deg)"
-  //       } else {
-  //         card.style.transform = `rotate(${angle}deg)`
-  //         angle -= 6
-  //         card.style.zIndex = `${cards.length - index}`
-  //       }
-  //     })
-  //   }})
-
 
   return (
     <main className="min-h-screen bg-lightblue text-white">
@@ -50,12 +27,16 @@ export default function PlotTwistPage() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
           {plottwistPics.map((src) => (
-            <div key={src} className="overflow-hidden border border-white/10 bg-black/60">
-              <img
-                src={src}
-                alt="Plottwist process picture"
-                className="h-full w-full object-fit duration-300"
-              />
+            <div key={src.id} className="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <img src={src.image} alt="Plottwist process picture" className="h-full w-full object-fit duration-300" />
+                </div>
+                <div className="flip-card-back"> 
+                  <h1>{src.title}</h1>
+                  <p>{src.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

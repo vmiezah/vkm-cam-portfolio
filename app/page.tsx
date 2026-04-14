@@ -4,10 +4,12 @@ import { HeroSection } from "@/components/sections/hero-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
+import { Analytics } from "@vercel/analytics/next"
 
 export default function PortfolioPage() {
   return (
     <main className="relative min-h-screen bg-background overflow-x-hidden scanlines">
+      <Analytics/>
       {/* Camera HUD Overlay - Fixed position elements */}
       <HudOverlay />
       

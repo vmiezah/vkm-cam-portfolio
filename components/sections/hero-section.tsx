@@ -17,6 +17,9 @@ export function HeroSection() {
     return () => clearTimeout(timer)
   }, [])
 
+  /**
+   * TODO: track button clicks with vercel analytics
+   */
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative hud-grid">
       <div className="container mx-auto px-6 md:px-12 py-20">

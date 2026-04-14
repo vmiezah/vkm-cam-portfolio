@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useRef } from "react"
 import Link from "next/link"
 
 const plottwistPics = [{id: 1, title: "Affinity Map", description: "A map of the characters and their relationships.", image: "/plottwist/affinity_map.png" },
@@ -10,10 +9,9 @@ const plottwistPics = [{id: 1, title: "Affinity Map", description: "A map of the
 ]
 
 export default function PlotTwistPage() {
-  const stackRef = useRef<HTMLDivElement | null>(null)
 
   return (
-    <main className="min-h-screen bg-lightblue text-white">
+    <main className="min-h-screen">
       <div className="mx-auto max-w-7xl px-6 py-8 md:px-12">
         <div className="mb-8 flex items-center justify-between">
           <h1 className="font-mono text-sm tracking-[0.3em] text-hud-green">PLOTTWIST</h1>

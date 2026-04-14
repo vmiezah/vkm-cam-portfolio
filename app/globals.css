@@ -239,6 +239,58 @@
   padding-bottom: 50%;
   text-overflow: none;
 }
+
+.resumeWrapper {
+  position: relative; /* Essential for absolute positioning of children */
+  transition: transform 0.3s ease;
+  width: fit-content; /* Keeps the wrapper tight to the image */
+}
+
+.resumeWrapper:hover {
+  transform: scale(1.05);
+}
+
+.hover-text {
+  /* Position it to cover the entire parent */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* The translucent grey background */
+  background-color: rgba(0, 0, 0, 0.5); 
+  
+  /* Text styling & Centering */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Initial state: Hidden */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.resumeWrapper:hover .hover-text {
+  /* Show on hover */
+  opacity: 1;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .resumeWrapper {
+    width: 95%;
+    margin: 10px auto;
+  }
+  
+  .resumeWrapper:hover {
+    transform: scale(1); /* Disable scale on touch to prevent layout glitches */
+  }
+}
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;

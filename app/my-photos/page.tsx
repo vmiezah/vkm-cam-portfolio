@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import Link from "next/link"
+import PageHeader from "@/components/ui/page-header"
 
 const photos = [
   "/myphotos/IMG_0122.jpeg",
@@ -103,15 +104,7 @@ export default function MyPhotosPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="mx-auto max-w-7xl px-6 py-8 md:px-12">
-        <div className="mb-8 flex items-center justify-between">
-          <h1 className="font-mono text-sm tracking-[0.3em] text-hud-green">MY PHOTOS</h1>
-          <Link
-            href="/#projects"
-            className="border border-white/20 px-3 py-2 font-mono text-xs text-white/80 transition-colors hover:border-white/40 hover:text-white"
-          >
-            BACK
-          </Link>
-        </div>
+      <PageHeader title="MY PHOTOS"/>
 
         <section ref={stackRef} className="myphotos-stack-area mb-12">
           <div className="myphotos-stack-sticky">

@@ -58,8 +58,8 @@ export function AboutSection() {
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold text-foreground mb-4">About Me</h2>
                   <p className="text-muted-foreground leading-relaxed text-pretty">
-                    I&apos;m a passionate developer with a keen eye for detail and a love for creating 
-                    seamless digital experiences. 
+                    I love talking to people. I have experience as a developer with a keen eye for detail and a love for creating 
+                    seamless digital experiences. My latest obsession is business, marketing, and sales.
                   </p>
                 </div>
               </div>

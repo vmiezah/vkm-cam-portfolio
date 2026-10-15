@@ -8,59 +8,60 @@ import { ExternalLink, ChevronRight, Images } from "lucide-react"
 
 const images = [
   "/myphotos/IMG_0122.jpeg",
-"/myphotos/IMG_1430.jpeg",
-"/myphotos/IMG_1696.jpeg",
-"/myphotos/IMG_2116.jpeg",
-"/myphotos/IMG_2179.jpeg",
-"/myphotos/IMG_2203.jpeg",
-"/myphotos/IMG_2229.jpeg",
-"/myphotos/IMG_2232.jpeg",
-"/myphotos/IMG_2234.jpeg",
-"/myphotos/IMG_2284.jpeg",
-"/myphotos/IMG_2291.jpeg",
-"/myphotos/IMG_2499.jpeg",
-"/myphotos/IMG_2534.jpeg",
-"/myphotos/IMG_2540.jpeg",
-"/myphotos/IMG_2545.jpeg",
-"/myphotos/IMG_2605.jpeg",
-"/myphotos/IMG_2684.jpeg",
-"/myphotos/IMG_2690.jpeg",
-"/myphotos/IMG_2738.jpeg",
-"/myphotos/IMG_2781.jpeg",
-"/myphotos/IMG_2894.jpeg",
-"/myphotos/IMG_2912.jpeg",
-"/myphotos/IMG_2928.jpeg",
-"/myphotos/IMG_3159.jpeg",
-"/myphotos/IMG_3191.jpeg",
-"/myphotos/IMG_4403.jpeg",
-"/myphotos/IMG_4603.jpeg",
-"/myphotos/IMG_4606.jpeg",
-"/myphotos/IMG_4647.jpeg",
-"/myphotos/IMG_4687.jpeg",
-"/myphotos/IMG_4699.jpeg",
-"/myphotos/IMG_4733.jpeg",
-"/myphotos/IMG_4880.jpeg",
-"/myphotos/IMG_4881.jpeg",
-"/myphotos/IMG_4913.jpeg",
-"/myphotos/IMG_4914.jpeg",
-"/myphotos/IMG_5103.JPG",
-"/myphotos/IMG_5248.jpeg",
-"/myphotos/IMG_5361.jpeg",
-"/myphotos/IMG_5402.jpeg",
-"/myphotos/IMG_5791.jpeg",
-"/myphotos/IMG_6006.jpeg",
-"/myphotos/IMG_6281.jpeg",
-"/myphotos/IMG_7722.jpeg",
-"/myphotos/IMG_7740.jpeg",
-"/myphotos/IMG_7989.jpeg",
-"/myphotos/IMG_8272.jpeg",
-"/myphotos/IMG_9118.jpeg"
+  "/myphotos/IMG_1430.jpeg",
+  "/myphotos/IMG_1696.jpeg",
+  "/myphotos/IMG_2116.jpeg",
+  "/myphotos/IMG_2179.jpeg",
+  "/myphotos/IMG_2203.jpeg",
+  "/myphotos/IMG_2229.jpeg",
+  "/myphotos/IMG_2232.jpeg",
+  "/myphotos/IMG_2234.jpeg",
+  "/myphotos/IMG_2284.jpeg",
+  "/myphotos/IMG_2291.jpeg",
+  "/myphotos/IMG_2499.jpeg",
+  "/myphotos/IMG_2534.jpeg",
+  "/myphotos/IMG_2540.jpeg",
+  "/myphotos/IMG_2545.jpeg",
+  "/myphotos/IMG_2605.jpeg",
+  "/myphotos/IMG_2684.jpeg",
+  "/myphotos/IMG_2690.jpeg",
+  "/myphotos/IMG_2738.jpeg",
+  "/myphotos/IMG_2781.jpeg",
+  "/myphotos/IMG_2894.jpeg",
+  "/myphotos/IMG_2912.jpeg",
+  "/myphotos/IMG_2928.jpeg",
+  "/myphotos/IMG_3159.jpeg",
+  "/myphotos/IMG_3191.jpeg",
+  "/myphotos/IMG_4403.jpeg",
+  "/myphotos/IMG_4603.jpeg",
+  "/myphotos/IMG_4606.jpeg",
+  "/myphotos/IMG_4647.jpeg",
+  "/myphotos/IMG_4687.jpeg",
+  "/myphotos/IMG_4699.jpeg",
+  "/myphotos/IMG_4733.jpeg",
+  "/myphotos/IMG_4880.jpeg",
+  "/myphotos/IMG_4881.jpeg",
+  "/myphotos/IMG_4913.jpeg",
+  "/myphotos/IMG_4914.jpeg",
+  "/myphotos/IMG_5103.JPG",
+  "/myphotos/IMG_5248.jpeg",
+  "/myphotos/IMG_5361.jpeg",
+  "/myphotos/IMG_5402.jpeg",
+  "/myphotos/IMG_5791.jpeg",
+  "/myphotos/IMG_6006.jpeg",
+  "/myphotos/IMG_6281.jpeg",
+  "/myphotos/IMG_7722.jpeg",
+  "/myphotos/IMG_7740.jpeg",
+  "/myphotos/IMG_7989.jpeg",
+  "/myphotos/IMG_8272.jpeg",
+  "/myphotos/IMG_9118.jpeg"
 ]
 const projects = [
   {
     id: "PLOTTWIST",
     title: "PlotTwist",
-    description: "A tool to encourage storytelling and creative expression for neurodivergent individuals.",
+    description: "A tool to encourage storytelling and creative expression for neurodivergent individuals." + 
+    "I made this to learn more about UX and the application design process. Planning on expanding my prototype with AI tools. Stay tuned!",
     tech: ["Figma"],
     image: "/plottwist/affinity_map.png",
     status: "ITERATING",
@@ -74,7 +75,7 @@ const projects = [
     status: "ITERATING",
     year: "2021-NOW",
   },
-  
+
 ]
 
 export function ProjectsSection() {
@@ -124,7 +125,7 @@ export function ProjectsSection() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project) => (
-            <FocusFrame 
+            <FocusFrame
               key={project.id}
               active={activeProject === project.id}
               size="sm"
@@ -164,11 +165,11 @@ export function ProjectsSection() {
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                  
+
                   {/* Hover Actions */}
                   <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity bg-background/80">
                     <button className="p-3 bg-hud-green text-primary-foreground hover:bg-hud-green/90 transition-colors">
-                    {project.id == "PHOTOS" ? <Images className="w-5 h-5" />  : <ExternalLink className="w-5 h-5" /> }                
+                      {project.id == "PHOTOS" ? <Images className="w-5 h-5" /> : <ExternalLink className="w-5 h-5" />}
                     </button>
                   </div>
                 </div>
@@ -182,8 +183,8 @@ export function ProjectsSection() {
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <span 
-                      key={tech} 
+                    <span
+                      key={tech}
                       className="px-2 py-1 bg-secondary text-xs font-mono text-muted-foreground border border-border"
                     >
                       {tech}
@@ -194,7 +195,7 @@ export function ProjectsSection() {
                 {/* View Project Link */}
                 <div className="flex items-center gap-2 text-hud-green font-mono text-sm mt-2 group/link cursor-pointer">
 
-                  <span>{project.id == "PHOTOS" ? "VIEW IMAGES"  : "VIEW PROJECT" }         </span>
+                  <span>{project.id == "PHOTOS" ? "VIEW IMAGES" : "VIEW PROJECT"}         </span>
                   <ChevronRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </div>
               </div>
